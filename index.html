@@ -5,8 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hans | Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+            extend: {
+                colors: {
+                    blue: '#0EA5E9',
+                    gray: '#9D9D9D'
+                },
+                fontFamily: {
+                    poppins: ['Poppins', 'sans-serif'],
+          }
+            }
+            }
+        }
+    </script>
 </head>
-<body>
-    <h1 class="text-blue-200">testing</h1>
+<body class="font-poppins">
+    <!-- NAVBAR -->
+
+    <!-- HERO -->
+    <section class="h-screen w-full px-9 py-40 lg:px-20 xl:px-40 2xl:px-80">
+        <div class="lg:grid lg:grid-cols-2">
+            <div class="flex flex-col items-center justify-center lg:items-start">
+                <h6 class="font-semibold text-gray">Hi There👋</h6>
+                <h1 class="font-bold text-5xl text-blue mt-3 text-center lg:text-6xl lg:text-start">Farhan Wahyudi</h1>
+                <h3 class="text-2xl font-semibold my-4 text-center">Fullstack Developer</h3>
+                <p class="text-gray font-medium text-center sm:w-84 lg:text-start">I am creating stunning software for your business, Intermediate experienced in web design and development.</p>
+                <button class="bg-blue text-white px-7 py-3 rounded-lg font-semibold mt-5">Download CV</button>
+            </div>
+            <div class="flex justify-center">
+                <img src="assets/developer.svg" alt="" class="w-[500px] 2xl:w-[800px]">
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a href="#about " class="hidden font-semibold mt-16 items-center gap-1 lg:flex">
+                Scroll Down For More
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" font-size="1.25rem" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"></path></svg>
+            </a>
+        </div>
+    </section>
 </body>
 </html>
