@@ -29,19 +29,30 @@
 </head>
 <body class="font-poppins">
     <!-- NAVBAR -->
-    <nav id="navbar" class="hidden fixed bg-white w-full flex justify-between items-center py-7 shadow-stone-200 lg:flex lg:px-20 xl:px-40 z-10 transition-shadow duration-300">
-        <h3 class="text-blue font-bold text-2xl">Farhan Wahyudi</h3>
-        <div id="navLinks" class="items-center flex gap-10 font-semibold text-base xl:text-lg">
-            <a class="nav-link text-black border-b-[3px] transition-colors duration-300" href="#home">Home</a>
-            <a class="nav-link text-black border-b-[3px] transition-colors duration-300" href="#about">About</a>
-            <a class="nav-link text-black border-b-[3px] transition-colors duration-300" href="#skills">Skills</a>
-            <a class="nav-link text-black border-b-[3px] transition-colors duration-300" href="#certificate">Certificate</a>
-            <a class="nav-link text-black border-b-[3px] transition-colors duration-300" href="#projects">Projects</a>
-            <a class="nav-link text-black border-b-[3px] transition-colors duration-300" href="#blog">Blog</a>
-            <a class="nav-link text-black border-b-[3px] transition-colors duration-300" href="#contact">Contact</a>
+    <nav id="navbar" class="fixed bg-white w-full flex justify-between items-center py-2 px-7 shadow-stone-200 lg:px-20 xl:py-4 xl:px-40 z-10 transition-shadow duration-300">
+        <h3 class="hidden text-blue font-bold text-2xl xl:block">Farhan Wahyudi</h3>
+        <div id="navLinks" class="hidden absolute top-0 left-0 w-full h-screen bg-white flex items-center justify-center flex-col gap-7 font-semibold text-base transition-all duration-500 ease-in-out transform -translate-y-full xl:text-lg xl:flex xl:flex-row xl:gap-10 xl:static xl:h-auto xl:w-auto xl:-translate-y-0">
+            <a class="nav-link text-black transition-colors duration-300" href="#home">Home</a>
+            <a class="nav-link text-black transition-colors duration-300" href="#about">About</a>
+            <a class="nav-link text-black transition-colors duration-300" href="#skills">Skills</a>
+            <a class="nav-link text-black transition-colors duration-300" href="#certificate">Certificate</a>
+            <a class="nav-link text-black transition-colors duration-300" href="#projects">Projects</a>
+            <a class="nav-link text-black transition-colors duration-300" href="#blog">Blog</a>
+            <a class="nav-link text-black transition-colors duration-300" href="#contact">Contact</a>
         </div>
-    </nav>
+        <div class="flex items-center justify-center w-10 h-10 rounded-full shadow-lg cursor-pointer xl:w-12 xl:h-12">
+            <svg class="text-blue w-4 h-4 xl:h-5 xl:w-5" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+            </svg>
+        </div>
+        <div id="menu" class="flex justify-center items-center text-white w-8 h-8 md:w-10 md:h-10 rounded-md bg-blue z-10 xl:hidden">
+            <svg id="burger" class="" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            <svg id="close" class="hidden font-bold w-4 h-4" stroke="currentColor" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path fill="currentColor" d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"></path>
+            </svg>
+        </div>
 
+    </nav>
     <!-- HERO -->
     <section id="home" class="w-full px-9 pt-40 pb-10 lg:px-20 lg:h-screen xl:px-40 2xl:px-80">
         <div class="lg:grid lg:grid-cols-2">
@@ -627,7 +638,8 @@
          opacity-0 pointer-events-none duration-300 lg:bottom-12 lg:right-12">
          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" font-size="1.25rem" color="white" style="color:white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M868 545.5L536.1 163a30.96 31.96 0 0 0-48.3 0L156 545.5a7.97 7.97 0 0 0 6 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"></path></svg>
     </button>
-
+    
+    <script src="js/menu.js"></script>
     <script src="js/back-to-top.js"></script>
     <script src="js/navbar.js"></script>
 </body>
