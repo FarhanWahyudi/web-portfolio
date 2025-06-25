@@ -21,9 +21,9 @@ window.addEventListener("scroll", () => {
   });
 
   navLinks.forEach((link) => {
-    link.classList.remove("text-blue", "border-b-[3px]");
+    link.classList.remove("text-blue", "border-b-[3px]", "dark:text-blue");
     if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("text-blue", "border-b-[3px]");
+      link.classList.add("text-blue", "border-b-[3px]", "dark:text-blue");
     } else {
       link.classList.add("text-black");
     }

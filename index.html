@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scrollbar-hide scroll-smooth">
+<html lang="en" id="htmlRoot" class="scrollbar-hide scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -27,40 +28,42 @@
         }
     </script>
 </head>
-<body class="font-poppins">
+<body class="font-poppins bg-white dark:bg-[#0E1B31] transition-all duration-500 ease-in-out">
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed bg-white w-full flex justify-between items-center py-2 px-7 shadow-stone-200 lg:px-20 xl:py-4 xl:px-40 z-10 transition-shadow duration-300">
+    <nav id="navbar" class="fixed bg-white w-full flex justify-between items-center py-2 px-4 shadow-stone-200 bg-white dark:shadow-slate-900 dark:bg-[#0E1B31] sm:px-7 lg:px-20 xl:py-4 xl:px-40 z-10 transition-all duration-500">
         <h3 class="hidden text-blue font-bold text-2xl xl:block">Farhan Wahyudi</h3>
-        <div id="navLinks" class="hidden absolute top-0 left-0 w-full h-screen bg-white flex items-center justify-center flex-col gap-7 font-semibold text-base transition-all duration-500 ease-in-out transform -translate-y-full xl:text-lg xl:flex xl:flex-row xl:gap-10 xl:static xl:h-auto xl:w-auto xl:-translate-y-0">
-            <a class="nav-link text-black transition-colors duration-300" href="#home">Home</a>
-            <a class="nav-link text-black transition-colors duration-300" href="#about">About</a>
-            <a class="nav-link text-black transition-colors duration-300" href="#skills">Skills</a>
-            <a class="nav-link text-black transition-colors duration-300" href="#certificate">Certificate</a>
-            <a class="nav-link text-black transition-colors duration-300" href="#projects">Projects</a>
-            <a class="nav-link text-black transition-colors duration-300" href="#blog">Blog</a>
-            <a class="nav-link text-black transition-colors duration-300" href="#contact">Contact</a>
+        <div id="navLinks" class="hidden absolute top-0 left-0 w-full h-screen flex items-center justify-center flex-col gap-7 font-semibold text-base bg-white dark:bg-[#0E1B31] transition-all duration-500 ease-in-out transform -translate-y-full xl:text-lg xl:flex xl:flex-row xl:gap-10 xl:static xl:h-auto xl:w-auto xl:-translate-y-0">
+            <a class="nav-link text-black transition-colors dark:text-white duration-300" href="#home">Home</a>
+            <a class="nav-link text-black transition-colors dark:text-white duration-300" href="#about">About</a>
+            <a class="nav-link text-black transition-colors dark:text-white duration-300" href="#skills">Skills</a>
+            <a class="nav-link text-black transition-colors dark:text-white duration-300" href="#certificate">Certificate</a>
+            <a class="nav-link text-black transition-colors dark:text-white duration-300" href="#projects">Projects</a>
+            <a class="nav-link text-black transition-colors dark:text-white duration-300" href="#blog">Blog</a>
+            <a class="nav-link text-black transition-colors dark:text-white duration-300" href="#contact">Contact</a>
         </div>
-        <div class="flex items-center justify-center w-10 h-10 rounded-full shadow-lg cursor-pointer xl:w-12 xl:h-12">
-            <svg class="text-blue w-4 h-4 xl:h-5 xl:w-5" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <div id="dark-mode-toggle" class="flex items-center justify-center w-10 h-10 rounded-full shadow-lg cursor-pointer bg-white z-10 dark:bg-[#132347] transition-all duration-500 xl:w-12 xl:h-12">
+            <svg class="text-blue w-4 h-4 xl:h-5 xl:w-5 dark:hidden" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
             </svg>
+            <svg class="hidden text-blue w-4 h-4 xl:h-5 xl:w-5 dark:block" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+            </svg>
         </div>
-        <div id="menu" class="flex justify-center items-center text-white w-8 h-8 md:w-10 md:h-10 rounded-md bg-blue z-10 xl:hidden">
+        <div id="menu" class="flex justify-center items-center text-white w-8 h-8 dark:bg-[#132347] dark:text-blue md:w-10 md:h-10 rounded-md bg-blue z-10 xl:hidden">
             <svg id="burger" class="" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             <svg id="close" class="hidden font-bold w-4 h-4" stroke="currentColor" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path fill="currentColor" d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"></path>
             </svg>
         </div>
-
     </nav>
     <!-- HERO -->
-    <section id="home" class="w-full px-9 pt-40 pb-10 lg:px-20 lg:h-screen xl:px-40 2xl:px-80">
+    <section id="home" class="w-full px-9 pt-20 pb-10 lg:px-20 lg:h-screen lg:pt-40 xl:px-40 2xl:px-80">
         <div class="lg:grid lg:grid-cols-2">
             <div class="flex flex-col items-center justify-center lg:items-start">
-                <h6 class="font-semibold text-gray">Hi There👋</h6>
+                <h6 class="font-semibold text-gray dark:text-[#C5CADF]">Hi There👋</h6>
                 <h1 class="font-bold text-5xl text-blue mt-3 text-center lg:text-6xl lg:text-start">Farhan Wahyudi</h1>
-                <h3 class="text-2xl font-semibold my-4 text-center">Fullstack Developer</h3>
-                <p class="text-gray font-medium text-center sm:w-84 lg:text-start">I am creating stunning software for your business, Intermediate experienced in web design and development.</p>
+                <h3 class="text-2xl font-semibold my-4 text-center dark:text-white">Fullstack Developer</h3>
+                <p class="text-gray font-medium text-center dark:text-[#C5CADF] sm:w-84 lg:text-start">I am creating stunning software for your business, Intermediate experienced in web design and development.</p>
                 <button class="flex gap-3 items-center bg-blue text-white px-7 py-3 rounded-lg font-semibold mt-5">
                     Download CV
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>
@@ -71,7 +74,7 @@
             </div>
         </div>
         <div class="flex justify-center">
-            <a href="#about " class="hidden font-semibold text-xl mt-16 items-center gap-1 lg:flex">
+            <a href="#about " class="hidden font-semibold text-xl mt-16 items-center gap-1 text-black dark:text-white lg:flex">
                 Scroll Down For More
                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" font-size="1.25rem" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"></path></svg>
             </a>
@@ -80,7 +83,7 @@
 
     <!-- ABOUT -->
     <section id="about" class="w-full px-9 py-16 lg:py-28 lg:px-20 xl:px-40 2xl:px-80">
-        <h1 class="text-center text-4xl font-semibold mb-20 lg:text-5xl lg:mb-30">About Me</h1>
+        <h1 class="text-center text-4xl font-semibold mb-20 text-black dark:text-white lg:text-5xl lg:mb-30">About Me</h1>
         <div class="lg:grid lg:grid-cols-2 items-center">
             <div>
                 <div class="flex justify-center items-center w-[280px] h-[360px] mx-auto mb-10 bg-blue rounded-xl md:w-[320px] md:h-[440px] lg:w-[347px] lg:h-[560px] xl:w-[408px] xl:h-[561px]">
@@ -88,21 +91,21 @@
                 </div>
             </div>
             <div class="text-center lg:text-start">
-                <h2 class="font-semibold text-2xl mb-4 lg:text-4xl">Hello👋 i'am <span class="text-blue">Farhan Wahyudi</span></h2>
-                <h4 class="font-semibold text-xl mb-8 lg:text-2xl">A <span class="text-blue">Fullstack Developer🧑‍💻</span> based in <span class="text-blue">Indonesia🌏</span></h4>
-                <p class="mb-10 lg:text-lg">Halo Saya adalah seseorang yang sedang menekuni dunia pemrograman web secara otodidak. Meskipun berasal dari jurusan Desain Pemodelan dan Informasi Bangunan, saya menemukan ketertarikan yang kuat terhadap teknologi web dan bagaimana sebuah aplikasi bisa dibangun dari awal hingga bisa digunakan oleh banyak orang.</p>
-                <div class="flex flex-col justify-center items-center text-center gap-5 md:flex-row lg:flex-row lg:border-t-2 lg:pt-7">
-                    <div class="flex flex-col items-center gap-4 shadow-md shadow-stone-300 w-72 border-b-4 border-b-blue rounded-md py-5 px-8 lg:px-5">
+                <h2 class="font-semibold text-2xl mb-4 text-black dark:text-white lg:text-4xl">Hello👋 i'am <span class="text-blue">Farhan Wahyudi</span></h2>
+                <h4 class="font-semibold text-xl mb-8 text-black dark:text-white lg:text-2xl">A <span class="text-blue">Fullstack Developer🧑‍💻</span> based in <span class="text-blue">Indonesia🌏</span></h4>
+                <p class="mb-10 text-black dark:text-white lg:text-lg">Halo Saya adalah seseorang yang sedang menekuni dunia pemrograman web secara otodidak. Meskipun berasal dari jurusan Desain Pemodelan dan Informasi Bangunan, saya menemukan ketertarikan yang kuat terhadap teknologi web dan bagaimana sebuah aplikasi bisa dibangun dari awal hingga bisa digunakan oleh banyak orang.</p>
+                <div class="flex flex-col justify-center items-center text-center gap-5 border-black dark:border-white md:flex-row lg:flex-row lg:border-t-2 lg:pt-7">
+                    <div class="flex flex-col items-center gap-4 shadow-md shadow-stone-300 w-72 border-b-4 border-b-blue rounded-md py-5 px-8 dark:shadow-slate-900 hover:shadow-xl transition-all duration-500 lg:px-5">
                         <h1 class="text-4xl text-blue font-semibold">2+</h1>
-                        <p class="text-[#1A202C]">Years Of Experience</p>
+                        <p class="text-[#1A202C] dark:text-white">Years Of Experience</p>
                     </div>
-                    <div class="flex flex-col items-center gap-4 shadow-md shadow-stone-300 w-72 border-b-4 border-b-blue rounded-md py-5 px-8 lg:px-5">
+                    <div class="flex flex-col items-center gap-4 shadow-md shadow-stone-300 w-72 border-b-4 border-b-blue rounded-md py-5 px-8 dark:shadow-slate-900 hover:shadow-xl transition-all duration-500 lg:px-5">
                         <h1 class="text-4xl text-blue font-semibold">7+</h1>
-                        <p class="text-[#1A202C]">Framework & Tech Stack Used</p>
+                        <p class="text-[#1A202C] dark:text-white">Framework & Tech Stack Used</p>
                     </div>
-                    <div class="flex flex-col items-center gap-4 shadow-md shadow-stone-300 w-72 border-b-4 border-b-blue rounded-md py-5 px-8 lg:px-5">
+                    <div class="flex flex-col items-center gap-4 shadow-md shadow-stone-300 w-72 border-b-4 border-b-blue rounded-md py-5 px-8 dark:shadow-slate-900 hover:shadow-xl transition-all duration-500 lg:px-5">
                         <h1 class="text-4xl text-blue font-semibold">3+</h1>
-                        <p class="text-[#1A202C]">Successed Projects</p>
+                        <p class="text-[#1A202C] dark:text-white">Successed Projects</p>
                     </div>
                 </div>
                 <div class="flex justify-center lg:justify-start">
@@ -117,111 +120,111 @@
 
     <!-- SKILLS -->
     <section id="skills" class="w-full px-9 py-16 lg:py-28 lg:px-20 xl:px-40 2xl:px-80">
-        <h1 class="text-center text-4xl font-semibold mb-10 md:mb-20 lg:text-5xl lg:mb-30">My Skills</h1>
+        <h1 class="text-center text-4xl font-semibold mb-10 text-black dark:text-white md:mb-20 lg:text-5xl lg:mb-30">My Skills</h1>
         <div class="items-center gap-5 lg:grid lg:grid-cols-4">
             <div class="text-center mb-8 lg:order-2 lg:text-end">
                 <h3 class="text-blue font-semibold text-3xl mb-4 lg:text-4xl">Tech Stack⚙️ & Tools🛠️</h3>
-                <p class="text-sm md:text-base lg:text-lg">There are some tech stack and tools that i've learned and experienced</p>
+                <p class="text-sm text-black dark:text-white md:text-base lg:text-lg">There are some tech stack and tools that i've learned and experienced</p>
             </div>
-            <div class="shadow-md shadow-stone-300 rounded-xl py-10 px-3 lg:col-span-3 lg:order-1 hover:shadow-2xl transition-shadow duration-500">
-                <h4 class="text-center font-semibold mb-10 lg:text-xl">Tech Stack & Tools</h4>
+            <div class="shadow-md shadow-stone-300 rounded-xl py-10 px-3 bg-white dark:shadow-slate-900 dark:bg-[#132347] lg:col-span-3 lg:order-1 hover:shadow-2xl transition-all duration-500">
+                <h4 class="text-center font-semibold mb-10 text-black dark:text-white lg:text-xl">Tech Stack & Tools</h4>
                 <div class="flex flex-wrap gap-y-10">
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/html.svg" alt="html" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">HTML</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">HTML</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/css.svg" alt="css" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">CSS</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">CSS</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/bootstrap.svg" alt="bootstrap" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">Bootstrap</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">Bootstrap</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/tailwind.svg" alt="tailwind" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">Tailwind CSS</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">Tailwind CSS</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/javascript.svg" alt="javascript" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">JavaScript</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">JavaScript</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/php.svg" alt="php" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">PHP</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">PHP</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/laravel.svg" alt="laravel" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">Laravel</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">Laravel</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/mysql.svg" alt="mysql" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">MySQL</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">MySQL</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/vite.svg" alt="vite" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">Vite</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">Vite</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/vscode.svg" alt="vscode" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">VS Code</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">VS Code</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/figma.svg" alt="figma" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">Figma</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">Figma</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/xampp.svg" alt="xampp" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">XAMPP</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">XAMPP</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/git.svg" alt="git" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">Git</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">Git</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                     <div class="flex w-1/2 flex-col items-center md:w-1/3 lg:w-1/4 xl:w-1/5">
-                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 mb-3">
+                        <div class="flex justify-center items-center w-[72px] h-[72px] rounded-[50%] shadow-md shadow-stone-200 text-black bg-white dark:bg-[#0E1B31] dark:shadow-slate-900 mb-3 transition-all duration-500">
                             <img src="assets/tech-stack/github.svg" alt="github" class="w-10">
                         </div>
-                        <h6 class="text-sm mb-2 font-semibold">Github</h6>
+                        <h6 class="text-sm mb-2 font-semibold text-black dark:text-white">Github</h6>
                         <p class="text-gray">Advanced</p>
                     </div>
                 </div>
@@ -231,17 +234,17 @@
 
     <!-- CERTIFICATE -->
     <section id="certificate" class="w-full px-9 py-16 lg:py-28 lg:px-20 xl:px-40 2xl:px-80">
-        <h1 class="text-center text-4xl font-semibold mb-10 md:mb-20 lg:text-5xl lg:mb-30">Certificate</h1>
+        <h1 class="text-center text-4xl font-semibold mb-10 text-black dark:text-white md:mb-20 lg:text-5xl lg:mb-30">Certificate</h1>
         <h3 class="text-2xl text-center font-bold text-blue lg:text-start md:text-4xl">My Certifications🎓</h3>
-        <p class="mt-5 text-center w-full text-sm mb-10 md:mb-20 lg:text-start md:text-lg lg:w-[500px]">Demonstrating commitment to self-improvement through hands-on technical training.</p>
+        <p class="mt-5 text-center w-full text-sm mb-10 text-black dark:text-white md:mb-20 lg:text-start md:text-lg lg:w-[500px]">Demonstrating commitment to self-improvement through hands-on technical training.</p>
         <div class="flex justify-between flex-wrap gap-x-10 gap-y-10 md:gap-y-20">
-            <div class="flex flex-col w-full shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
+            <div class="flex flex-col w-full shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-all duration-500">
                 <img src="assets/certificate/certificate.jpg" alt="" class="w-full rounded-lg border border-gray">
                 <div class="flex items-center gap-1 mt-2">
                     <img src="assets/logo-bwa.svg" alt="BuildWithAngga" class="w-5">
-                    <p class="text-sm font-medium">BuildWithAngga</p>
+                    <p class="text-sm font-medium text-black dark:text-white">BuildWithAngga</p>
                 </div>
-                <h1 class="text-2xl font-semibold mt-5 mb-3">University Website Development</h1>
+                <h1 class="text-2xl font-semibold mt-5 mb-3 text-black dark:text-white">University Website Development</h1>
                 <p class="text-sm text-gray font-semibold">Published Jun 2025</p>
                 <p class="text-sm text-gray font-semibold">ID Credential YBnklodjQh</p>
                 <div class="flex items-center gap-3 mt-5">
@@ -250,13 +253,13 @@
                     <img src="assets/tech-stack/mysql.svg" alt="mysql" class="w-8">
                 </div>
             </div>
-            <div class="flex flex-col w-full shadow-2xl shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%]">
+            <div class="flex flex-col w-full shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-all duration-500">
                 <img src="assets/certificate/certificate.jpg" alt="" class="w-full rounded-lg border border-gray">
                 <div class="flex items-center gap-1 mt-2">
                     <img src="assets/logo-bwa.svg" alt="BuildWithAngga" class="w-5">
-                    <p class="text-sm font-medium">BuildWithAngga</p>
+                    <p class="text-sm font-medium text-black dark:text-white">BuildWithAngga</p>
                 </div>
-                <h1 class="text-2xl font-semibold mt-5 mb-3">University Website Development</h1>
+                <h1 class="text-2xl font-semibold mt-5 mb-3 text-black dark:text-white">University Website Development</h1>
                 <p class="text-sm text-gray font-semibold">Published Jun 2025</p>
                 <p class="text-sm text-gray font-semibold">ID Credential YBnklodjQh</p>
                 <div class="flex items-center gap-3 mt-5">
@@ -264,13 +267,13 @@
                     <img src="assets/tech-stack/mysql.svg" alt="mysql" class="w-8">
                 </div>
             </div>
-            <div class="flex flex-col w-full shadow-2xl shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%]">
+            <div class="flex flex-col w-full shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-all duration-500">
                 <img src="assets/certificate/certificate.jpg" alt="" class="w-full rounded-lg border border-gray">
                 <div class="flex items-center gap-1 mt-2">
                     <img src="assets/logo-bwa.svg" alt="BuildWithAngga" class="w-5">
-                    <p class="text-sm font-medium">BuildWithAngga</p>
+                    <p class="text-sm font-medium text-black dark:text-white">BuildWithAngga</p>
                 </div>
-                <h1 class="text-2xl font-semibold mt-5 mb-3">University Website Development</h1>
+                <h1 class="text-2xl font-semibold mt-5 mb-3 text-black dark:text-white">University Website Development</h1>
                 <p class="text-sm text-gray font-semibold">Published Jun 2025</p>
                 <p class="text-sm text-gray font-semibold">ID Credential YBnklodjQh</p>
                 <div class="flex items-center gap-3 mt-5">
@@ -283,29 +286,29 @@
 
     <!-- PROJECT -->
     <section id="projects" class="w-full px-9 py-16 lg:py-28 lg:px-20 xl:px-40 2xl:px-80">
-        <h1 class="text-center text-4xl font-semibold mb-10 md:mb-20 lg:text-5xl lg:mb-30">Projects</h1>
+        <h1 class="text-center text-4xl font-semibold mb-10 text-black dark:text-white md:mb-20 lg:text-5xl lg:mb-30">Projects</h1>
         <h3 class="text-2xl text-center font-bold text-blue lg:text-start md:text-4xl">Project I've Created💼</h3>
-        <p class="mt-5 text-center w-full text-sm mb-10 lg:text-start md:text-lg md:mb-20 lg:w-[700px]">I've created a few project while i was learing about frontend website development. and all of project i'll explain below</p>
+        <p class="mt-5 text-center w-full text-sm mb-10 text-black dark:text-white lg:text-start md:text-lg md:mb-20 lg:w-[700px]">I've created a few project while i was learing about frontend website development. and all of project i'll explain below</p>
         <div class="flex justify-between gap-y-10 flex-wrap">
-            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
+            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-all duration-500">
                 <div class="flex flex-col gap-3">
                     <img src="assets/projects/Screenshot.png" alt="personal-portfolio" class="border border-gray rounded-lg">
-                    <h3 class="text-2xl font-semibold">My Personal Portfolio</h3>
+                    <h3 class="text-2xl font-semibold text-black dark:text-white">My Personal Portfolio</h3>
                     <div class="flex flex-wrap gap-2">
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/html.svg" alt="html" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">HTML</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">HTML</p>
                         </div>
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/css.svg" alt="css" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">CSS</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">CSS</p>
                         </div>
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/tailwind.svg" alt="tailwind" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">TAILWIND</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">TAILWIND</p>
                         </div>
                     </div>
-                    <p class="text-md text-[#1A202C] md:text-lg">
+                    <p class="text-md text-[#1A202C] dark:text-white md:text-lg">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quidem!
                     </p>
                 </div>
@@ -320,25 +323,25 @@
                     </a>
                 </div>
             </div>
-            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
+            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-all duration-500">
                 <div class="flex flex-col gap-3">
                     <img src="assets/projects/Screenshot.png" alt="personal-portfolio" class="border border-gray rounded-lg">
-                    <h3 class="text-2xl font-semibold">My Personal Portfolio</h3>
+                    <h3 class="text-2xl font-semibold text-black dark:text-white">My Personal Portfolio</h3>
                     <div class="flex flex-wrap gap-2">
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/html.svg" alt="html" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">HTML</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">HTML</p>
                         </div>
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/css.svg" alt="css" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">CSS</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">CSS</p>
                         </div>
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/tailwind.svg" alt="tailwind" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">TAILWIND</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">TAILWIND</p>
                         </div>
                     </div>
-                    <p class="text-md text-[#1A202C] md:text-lg">
+                    <p class="text-md text-[#1A202C] dark:text-white md:text-lg">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quidem!
                     </p>
                 </div>
@@ -353,25 +356,25 @@
                     </a>
                 </div>
             </div>
-            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
+            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-all duration-500">
                 <div class="flex flex-col gap-3">
                     <img src="assets/projects/Screenshot.png" alt="personal-portfolio" class="border border-gray rounded-lg">
-                    <h3 class="text-2xl font-semibold">My Personal Portfolio</h3>
+                    <h3 class="text-2xl font-semibold text-black dark:text-white">My Personal Portfolio</h3>
                     <div class="flex flex-wrap gap-2">
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/html.svg" alt="html" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">HTML</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">HTML</p>
                         </div>
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/css.svg" alt="css" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">CSS</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">CSS</p>
                         </div>
-                        <div class="flex items-center gap-2 bg-[#EDF2F7] p-1 rounded-md px-2">
+                        <div class="flex items-center gap-2 bg-[#EDF2F7] dark:bg-[#344263] p-1 rounded-md px-2 transition-all duration-500">
                             <img src="assets/tech-stack/tailwind.svg" alt="tailwind" class="w-4 md:w-5">
-                            <p class="font-semibold text-xs md:text-sm">TAILWIND</p>
+                            <p class="font-semibold text-xs text-black dark:text-white md:text-sm">TAILWIND</p>
                         </div>
                     </div>
-                    <p class="text-md text-[#1A202C] md:text-lg">
+                    <p class="text-md text-[#1A202C] dark:text-white md:text-lg">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quidem!
                     </p>
                 </div>
@@ -386,12 +389,13 @@
                     </a>
                 </div>
             </div>
+            
         </div>
-        <div class="flex flex-col justify-between items-center shadow-2xl shadow-stone-300 rounded-lg border-b-4 border-blue p-10 mt-20 md:flex-row md:p-16">
+        <div class="flex flex-col justify-between items-center shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue p-10 mt-20 dark:shadow-slate-900 hover:shadow-2xl md:flex-row md:p-16 transition-all duration-500">
             <div class="flex flex-col gap-4 items-center md:items-start lg:gap-2">
-                <h5 class="text-[#1A202C] font-thin lg:text-xl">LET'S TALK</h5>
-                <h3 class="text-[#1A202C] text-3xl lg:text-5xl">ABOUT YOUR</h3>
-                <h1 class="text-5xl leading-tight font-bold text-center md:text-start lg:text-7xl">NEXT PROJECT</h1>
+                <h5 class="text-[#1A202C] font-thin dark:text-white lg:text-xl">LET'S TALK</h5>
+                <h3 class="text-[#1A202C] text-3xl dark:text-white lg:text-5xl">ABOUT YOUR</h3>
+                <h1 class="text-5xl leading-tight font-bold text-center text-black dark:text-white md:text-start lg:text-7xl">NEXT PROJECT</h1>
             </div>
             <a href="#contact" class="inline-flex items-center gap-1 px-10 py-3 font-semibold text-md bg-blue text-white rounded-md mt-8 md:mt-0 xl:px-12 xl:py-5 xl:text-xl">
                 Get In Touch
@@ -402,11 +406,11 @@
 
     <!-- BLOG -->
     <section id="blog" class="w-full px-9 py-16 lg:py-28 lg:px-20 xl:px-40 2xl:px-80">
-        <h1 class="text-center text-4xl font-semibold mb-10 md:mb-20 lg:text-5xl lg:mb-30">Blog</h1>
+        <h1 class="text-center text-4xl font-semibold mb-10 text-black dark:text-white  md:mb-20 lg:text-5xl lg:mb-30">Blog</h1>
         <h3 class="text-2xl text-center font-bold text-blue lg:text-start md:text-4xl">Blog About Coding📝</h3>
-        <p class="mt-5 text-center w-full text-sm mb-10 lg:text-start md:text-lg md:mb-20 lg:w-[700px]">There are some blog about coding that i create to add more insight and also to share knowledge</p>
+        <p class="mt-5 text-center w-full text-sm mb-10 text-black dark:text-white lg:text-start md:text-lg md:mb-20 lg:w-[700px]">There are some blog about coding that i create to add more insight and also to share knowledge</p>
         <div class="flex justify-between gap-y-10 flex-wrap">
-            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
+            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 dark:shadow-slate-900 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
                 <div class="flex flex-col gap-3">
                     <img src="assets/blogs/css.webp" alt="personal-portfolio" class="border border-gray rounded-lg">
                     <div class="flex items-center justify-between">
@@ -419,7 +423,7 @@
                             <p class="text-xs md:text-sm">Jun 25, 2025</p>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-semibold">What Is CSS?</h3>
+                    <h3 class="text-2xl font-semibold text-black dark:text-white">What Is CSS?</h3>
                     <p class="text-sm text-gray md:text-md xl:text-lg">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quidem!
                     </p>
@@ -428,7 +432,7 @@
                     <div class="flex items-center gap-2">
                         <img src="assets/tech-stack/javascript.svg" alt="author" class="rounded-full w-9 xl:w-12">
                         <div>
-                            <h6 class="font-semibold text-md leading-tight xl:text-lg">Hans</h6>
+                            <h6 class="font-semibold text-md leading-tight text-black dark:text-white xl:text-lg">Hans</h6>
                             <p class="text-gray text-xs leading-tight xl:text-sm">Author</p>
                         </div>
                     </div>
@@ -438,7 +442,7 @@
                     </button>
                 </div>
             </div>
-            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
+            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 dark:shadow-slate-900 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
                 <div class="flex flex-col gap-3">
                     <img src="assets/blogs/css.webp" alt="personal-portfolio" class="border border-gray rounded-lg">
                     <div class="flex items-center justify-between">
@@ -451,7 +455,7 @@
                             <p class="text-xs md:text-sm">Jun 25, 2025</p>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-semibold">What Is CSS?</h3>
+                    <h3 class="text-2xl font-semibold text-black dark:text-white">What Is CSS?</h3>
                     <p class="text-sm text-gray md:text-md xl:text-lg">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quidem!
                     </p>
@@ -460,7 +464,7 @@
                     <div class="flex items-center gap-2">
                         <img src="assets/tech-stack/javascript.svg" alt="author" class="rounded-full w-9 xl:w-12">
                         <div>
-                            <h6 class="font-semibold text-md leading-tight xl:text-lg">Hans</h6>
+                            <h6 class="font-semibold text-md leading-tight text-black dark:text-white xl:text-lg">Hans</h6>
                             <p class="text-gray text-xs leading-tight xl:text-sm">Author</p>
                         </div>
                     </div>
@@ -470,7 +474,7 @@
                     </button>
                 </div>
             </div>
-            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
+            <div class="flex flex-col justify-between shadow-lg shadow-stone-300 rounded-lg border-b-4 border-blue px-5 py-7 dark:shadow-slate-900 md:w-[45%] lg:w-[30%] hover:shadow-2xl transition-shadow duration-500">
                 <div class="flex flex-col gap-3">
                     <img src="assets/blogs/css.webp" alt="personal-portfolio" class="border border-gray rounded-lg">
                     <div class="flex items-center justify-between">
@@ -483,7 +487,7 @@
                             <p class="text-xs md:text-sm">Jun 25, 2025</p>
                         </div>
                     </div>
-                    <h3 class="text-2xl font-semibold">What Is CSS?</h3>
+                    <h3 class="text-2xl font-semibold text-black dark:text-white">What Is CSS?</h3>
                     <p class="text-sm text-gray md:text-md xl:text-lg">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quidem!
                     </p>
@@ -492,7 +496,7 @@
                     <div class="flex items-center gap-2">
                         <img src="assets/tech-stack/javascript.svg" alt="author" class="rounded-full w-9 xl:w-12">
                         <div>
-                            <h6 class="font-semibold text-md leading-tight xl:text-lg">Hans</h6>
+                            <h6 class="font-semibold text-md leading-tight text-black dark:text-white xl:text-lg">Hans</h6>
                             <p class="text-gray text-xs leading-tight xl:text-sm">Author</p>
                         </div>
                     </div>
@@ -507,41 +511,41 @@
 
     <!-- CONTACT -->
     <section id="contact" class="w-full px-9 py-16 lg:py-28 lg:px-20 xl:px-40 2xl:px-80">
-        <h1 class="text-center text-4xl font-semibold mb-10 md:mb-20 lg:text-5xl lg:mb-30">Contact</h1>
+        <h1 class="text-center text-4xl font-semibold mb-10 text-black dark:text-white md:mb-20 lg:text-5xl lg:mb-30">Contact</h1>
         <h3 class="text-2xl text-center font-bold text-blue lg:text-start md:text-4xl">Feel Free To Contact Me📨</h3>
-        <p class="mt-5 text-center w-full text-sm mb-10 lg:text-start md:text-lg md:mb-20 lg:w-[750px]">I'am always open to discussing product design, collaborating work or partnerships. Just contact me with this media below</p>
+        <p class="mt-5 text-center w-full text-sm mb-10 text-black dark:text-white lg:text-start md:text-lg md:mb-20 lg:w-[750px]">I'am always open to discussing product design, collaborating work or partnerships. Just contact me with this media below</p>
         <div class="flex justify-between gap-y-10 flex-wrap">
-            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 md:w-[45%] lg:w-[30%] hover:shadow-xl transition-shadow duration-300">
+            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-xl transition-all duration-500">
                 <div class="flex items-center justify-center">
                     <img src="assets/socials/whatsapp.svg" alt="whatsapp" class="flex-shrink-0 w-12 transition-transform transform ease-in-out duration-500 group-hover:-translate-y-1">
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
-                        <h3 class="text-xl font-semibold">Whatsapp</h3>
+                        <h3 class="text-xl font-semibold text-black dark:text-white">Whatsapp</h3>
                         <p class="text-gray text-sm sm:text-md">+62 83832973994</p>
                     </div>
                     <p class="text-blue text-sm font-semibold mt-2 sm:text-md">Send Me A Message</p>
                 </div>
             </div>
-            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 md:w-[45%] lg:w-[30%] hover:shadow-xl transition-shadow duration-300">
+            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-xl transition-all duration-500">
                 <div class="flex items-center justify-center">
                     <img src="assets/socials/gmail.svg" alt="gmail" class="flex-shrink-0 w-12 transition-transform transform ease-in-out duration-500 group-hover:-translate-y-1">
                 </div>
                 <div class="flex flex-col justify-between min-w-0">
                     <div>
-                        <h3 class="text-xl font-semibold">Gmail</h3>
+                        <h3 class="text-xl font-semibold text-black dark:text-white">Gmail</h3>
                         <p class="text-gray text-sm break-words w-full sm:text-md">farhanwahyudi975@gmail.com</p>
                     </div>
                     <p class="text-blue text-sm font-semibold mt-2 sm:text-md">Send Me A Message</p>
                 </div>
             </div>
-            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 md:w-[45%] lg:w-[30%] hover:shadow-xl transition-shadow duration-300">
+            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 bg-white dark:shadow-slate-900 dark:bg-[#132347] md:w-[45%] lg:w-[30%] hover:shadow-xl transition-all duration-500">
                 <div class="flex items-center justify-center">
                     <img src="assets/socials/telegram.svg" alt="telegram" class="flex-shrink-0 w-12 transition-transform transform ease-in-out duration-500 group-hover:-translate-y-1">
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
-                        <h3 class="text-xl font-semibold">Telegram</h3>
+                        <h3 class="text-xl font-semibold text-black dark:text-white">Telegram</h3>
                         <p class="text-gray text-sm sm:text-md">+62 89510855937</p>
                     </div>
                     <p class="text-blue text-sm font-semibold mt-2 sm:text-md">Send Me A Message</p>
@@ -556,27 +560,27 @@
         <form action="" class="flex flex-col gap-5 md:gap-8">
             <div class="flex flex-col gap-x-5 gap-y-5 md:gap-y-8 lg:flex-row">
                 <div class="flex flex-col gap-3 w-full">
-                    <label for="firstName" class="leading-none">Your First Name<span class="text-red-500">*</span></label>
-                    <input type="text" name="firstName" id="firstName" placeholder="Your First Name. Example: John" class="p-3 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue box-content md:p-5">
+                    <label for="firstName" class="leading-none text-black dark:text-white">Your First Name<span class="text-red-500">*</span></label>
+                    <input type="text" name="firstName" id="firstName" placeholder="Your First Name. Example: John" class="p-3 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5">
                 </div>
                 <div class="flex flex-col gap-3 w-full">
-                    <label for="lastName" class="leading-none">Your Last Name<span class="text-red-500">*</span></label>
-                    <input type="text" name="lastName" id="lastName" placeholder="Your Last Name. Example: Doe" class="p-3 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue box-content md:p-5">
+                    <label for="lastName" class="leading-none text-black dark:text-white">Your Last Name<span class="text-red-500">*</span></label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Your Last Name. Example: Doe" class="p-3 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5">
                 </div>
             </div>
             <div class="flex flex-col gap-x-5 gap-y-5 md:gap-y-8 lg:flex-row">
                 <div class="flex flex-col gap-3 w-full">
-                    <label for="email" class="leading-none">Your Email<span class="text-red-500">*</span></label>
-                    <input type="text" name="email" id="email" placeholder="Your Email. Example: johndoe@gmail.com" class="p-3 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue box-content md:p-5">
+                    <label for="email" class="leading-none text-black dark:text-white">Your Email<span class="text-red-500">*</span></label>
+                    <input type="text" name="email" id="email" placeholder="Your Email. Example: johndoe@gmail.com" class="p-3 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5">
                 </div>
                 <div class="flex flex-col gap-3 w-full">
-                    <label for="subject" class="leading-none">Your Subject<span class="text-red-500">*</span></label>
-                    <input type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-3 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue box-content md:p-5">
+                    <label for="subject" class="leading-none text-black dark:text-white">Your Subject<span class="text-red-500">*</span></label>
+                    <input type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-3 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5">
                 </div>
             </div>
             <div class="flex flex-col">
-                <label for="message" class="mb-2">Your Message<span class="text-red-500">*</span></label>
-                <textarea type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-5 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue resize-none h-72"></textarea>
+                <label for="message" class="mb-2 text-black dark:text-white">Your Message<span class="text-red-500">*</span></label>
+                <textarea type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-5 rounded-md border-2 border-blue outline-none text-black dark:text-white focus:shadow-sm focus:shadow-blue resize-none h-72"></textarea>
             </div>
             <div>
                 <button type="submit" class="flex items-center justify-center w-full gap-1 px-10 py-3 font-semibold text-md bg-blue text-white rounded-md sm:w-auto">
@@ -642,5 +646,6 @@
     <script src="js/menu.js"></script>
     <script src="js/back-to-top.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/dark-mode.js"></script>
 </body>
 </html>
