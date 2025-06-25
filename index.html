@@ -390,7 +390,7 @@
     </section>
 
     <!-- BLOG -->
-     <section id="blog" class="w-full px-9 py-30 lg:px-20 xl:px-40 2xl:px-80">
+    <section id="blog" class="w-full px-9 py-30 lg:px-20 xl:px-40 2xl:px-80">
         <h1 class="text-center text-4xl font-semibold mb-10 md:mb-20 lg:text-5xl lg:mb-30">Blog</h1>
         <h3 class="text-2xl text-center font-bold text-blue lg:text-start md:text-4xl">Blog About Coding📝</h3>
         <p class="mt-5 text-center w-full text-sm mb-10 lg:text-start md:text-lg md:mb-20 lg:w-[700px]">There are some blog about coding that i create to add more insight and also to share knowledge</p>
@@ -492,7 +492,89 @@
                 </div>
             </div>
         </div>
-     </section>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="w-full px-9 py-30 lg:px-20 xl:px-40 2xl:px-80">
+        <h1 class="text-center text-4xl font-semibold mb-10 md:mb-20 lg:text-5xl lg:mb-30">Contact</h1>
+        <h3 class="text-2xl text-center font-bold text-blue lg:text-start md:text-4xl">Feel Free To Contact Me📨</h3>
+        <p class="mt-5 text-center w-full text-sm mb-10 lg:text-start md:text-lg md:mb-20 lg:w-[750px]">I'am always open to discussing product design, collaborating work or partnerships. Just contact me with this media below</p>
+        <div class="flex justify-between gap-y-10 flex-wrap">
+            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 md:w-[45%] lg:w-[30%] hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center justify-center">
+                    <img src="assets/socials/whatsapp.svg" alt="whatsapp" class="flex-shrink-0 w-12 transition-transform transform ease-in-out duration-500 group-hover:-translate-y-1">
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold">Whatsapp</h3>
+                        <p class="text-gray text-sm sm:text-md">+62 83832973994</p>
+                    </div>
+                    <p class="text-blue text-sm font-semibold mt-2 sm:text-md">Send Me A Message</p>
+                </div>
+            </div>
+            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 md:w-[45%] lg:w-[30%] hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center justify-center">
+                    <img src="assets/socials/gmail.svg" alt="gmail" class="flex-shrink-0 w-12 transition-transform transform ease-in-out duration-500 group-hover:-translate-y-1">
+                </div>
+                <div class="flex flex-col justify-between min-w-0">
+                    <div>
+                        <h3 class="text-xl font-semibold">Gmail</h3>
+                        <p class="text-gray text-sm break-words w-full sm:text-md">farhanwahyudi975@gmail.com</p>
+                    </div>
+                    <p class="text-blue text-sm font-semibold mt-2 sm:text-md">Send Me A Message</p>
+                </div>
+            </div>
+            <div class="group flex gap-5 shadow-md w-full shadow-stone-300 rounded-lg border-b-4 border-blue p-5 md:w-[45%] lg:w-[30%] hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center justify-center">
+                    <img src="assets/socials/telegram.svg" alt="telegram" class="flex-shrink-0 w-12 transition-transform transform ease-in-out duration-500 group-hover:-translate-y-1">
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold">Telegram</h3>
+                        <p class="text-gray text-sm sm:text-md">+62 89510855937</p>
+                    </div>
+                    <p class="text-blue text-sm font-semibold mt-2 sm:text-md">Send Me A Message</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 mt-5 mb-7">
+            <div class="flex-grow border-t border-stone-200"></div>
+            <span class="text-gray-500 text-lg">Or</span>
+            <div class="flex-grow border-t border-stone-200"></div>
+        </div>
+        <form action="" class="flex flex-col gap-8">
+            <div class="flex flex-col gap-x-5 gap-y-8 lg:flex-row">
+                <div class="flex flex-col gap-3 w-full">
+                    <label for="firstName" class="leading-none">Your First Name<span class="text-red-500">*</span></label>
+                    <input type="text" name="firstName" id="firstName" placeholder="Your First Name. Example: John" class="p-5 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue box-content">
+                </div>
+                <div class="flex flex-col gap-3 w-full">
+                    <label for="lastName" class="leading-none">Your Last Name<span class="text-red-500">*</span></label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Your Last Name. Example: Doe" class="p-5 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue box-content">
+                </div>
+            </div>
+            <div class="flex flex-col gap-x-5 gap-y-8 lg:flex-row">
+                <div class="flex flex-col gap-3 w-full">
+                    <label for="email" class="leading-none">Your Email<span class="text-red-500">*</span></label>
+                    <input type="text" name="email" id="email" placeholder="Your Email. Example: johndoe@gmail.com" class="p-5 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue box-content">
+                </div>
+                <div class="flex flex-col gap-3 w-full">
+                    <label for="subject" class="leading-none">Your Subject<span class="text-red-500">*</span></label>
+                    <input type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-5 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue box-content">
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <label for="message" class="mb-2">Your Message<span class="text-red-500">*</span></label>
+                <textarea type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-5 rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue resize-none h-72"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="flex items-center justify-center w-full gap-1 px-10 py-3 font-semibold text-md bg-blue text-white rounded-md sm:w-auto">
+                    Submit
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path></svg>
+                </button>
+            </div>
+        </form>
+    </section>
 
     <!-- BACK TO TOP -->
      <button id="backToTop" class="fixed flex justify-center items-center bottom-5 right-5 bg-blue text-white w-12 h-12 rounded-lg shadow-xl transition 
