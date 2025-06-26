@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.min.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -33,13 +34,13 @@
     <nav id="navbar" class="fixed bg-white w-full flex justify-between items-center py-2 px-4 shadow-stone-200 bg-white dark:shadow-slate-900 dark:bg-[#0E1B31] sm:px-7 lg:px-20 xl:py-4 xl:px-40 z-10 transition-all duration-500">
         <h3 class="hidden text-blue font-bold text-2xl xl:block">Farhan Wahyudi</h3>
         <div id="navLinks" class="hidden absolute top-0 left-0 w-full h-screen flex items-center justify-center flex-col gap-7 font-semibold text-base bg-white dark:bg-[#0E1B31] transition-all duration-500 ease-in-out transform -translate-y-full xl:text-lg xl:flex xl:flex-row xl:gap-10 xl:static xl:h-auto xl:w-auto xl:-translate-y-0">
-            <a class="nav-link nav-link-current text-black transition-colors dark:text-white duration-300" href="#home">Home</a>
-            <a class="nav-link nav-link-current text-black transition-colors dark:text-white duration-300" href="#about">About</a>
-            <a class="nav-link nav-link-current text-black transition-colors dark:text-white duration-300" href="#skills">Skills</a>
-            <a class="nav-link nav-link-current text-black transition-colors dark:text-white duration-300" href="#certificate">Certificate</a>
-            <a class="nav-link nav-link-current text-black transition-colors dark:text-white duration-300" href="#projects">Projects</a>
-            <a class="nav-link nav-link-current text-black transition-colors dark:text-white duration-300" href="#blog">Blog</a>
-            <a class="nav-link nav-link-current text-black transition-colors dark:text-white duration-300" href="#contact">Contact</a>
+            <a class="nav-link nav-link-current text-black transition-colors duration-300" href="#home">Home</a>
+            <a class="nav-link nav-link-current text-black transition-colors duration-300" href="#about">About</a>
+            <a class="nav-link nav-link-current text-black transition-colors duration-300" href="#skills">Skills</a>
+            <a class="nav-link nav-link-current text-black transition-colors duration-300" href="#certificate">Certificate</a>
+            <a class="nav-link nav-link-current text-black transition-colors duration-300" href="#projects">Projects</a>
+            <a class="nav-link nav-link-current text-black transition-colors duration-300" href="#blog">Blog</a>
+            <a class="nav-link nav-link-current text-black transition-colors duration-300" href="#contact">Contact</a>
         </div>
         <div id="dark-mode-toggle" class="flex items-center justify-center w-10 h-10 rounded-full shadow-lg cursor-pointer bg-white z-10 dark:bg-[#132347] transition-all duration-500 xl:w-12 xl:h-12">
             <svg class="text-blue w-4 h-4 xl:h-5 xl:w-5 dark:hidden" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +64,7 @@
             <div class="flex flex-col items-center justify-center lg:items-start">
                 <h6 class="font-semibold text-gray dark:text-[#C5CADF]">Hi There👋</h6>
                 <h1 class="font-bold text-5xl text-blue mt-3 text-center lg:text-6xl lg:text-start">Farhan Wahyudi</h1>
-                <h3 class="text-2xl font-semibold my-4 text-center dark:text-white">Fullstack Developer</h3>
+                <h3 id="typeit" class="text-2xl font-semibold my-4 text-center text-black dark:text-white"></h3>
                 <p class="text-gray font-medium text-center dark:text-[#C5CADF] sm:w-84 lg:text-start">I am creating stunning software for your business, Intermediate experienced in web design and development.</p>
                 <button class="flex gap-3 items-center bg-blue text-white px-7 py-3 rounded-lg font-semibold mt-5">
                     Download CV
@@ -845,5 +846,6 @@
     <script src="js/navbar.js"></script>
     <script src="js/dark-mode.js"></script>
     <script src="js/popup.js"></script>
+    <script src="js/animasi.js"></script>
 </body>
 </html>
