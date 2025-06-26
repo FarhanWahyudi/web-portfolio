@@ -1,6 +1,6 @@
 const navbar = document.getElementById('navbar');
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
+const navLinks = document.querySelectorAll(".nav-link-current");
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
