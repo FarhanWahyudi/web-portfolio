@@ -21,11 +21,9 @@ window.addEventListener("scroll", () => {
   });
 
   navLinks.forEach((link) => {
-    link.classList.remove("text-blue", "border-b-[3px]", "dark:text-[#0EA5E9]");
+    link.classList.remove("border-b-[3px]");
     if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("text-blue", "border-b-[3px]", "dark:text-[#0EA5E9]");
-    } else {
-      link.classList.add("text-black", "dark:text-white");
+      link.classList.add("border-b-[3px]");
     }
   });
 });
