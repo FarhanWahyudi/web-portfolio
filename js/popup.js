@@ -1,7 +1,8 @@
 document.querySelectorAll('.open-detail').forEach((btn) => {
   btn.addEventListener('click', () => {
-    const modal = btn.closest('.project').querySelector('.modal');
-    modal.classList.remove('hidden');
+    const id = btn.getAttribute('data-id'); // Ambil ID project dari tombol
+    const modal = document.getElementById(`modal-${id}`); // Temukan modal yang sesuai
+    if (modal) modal.classList.remove('hidden');
   });
 });
 

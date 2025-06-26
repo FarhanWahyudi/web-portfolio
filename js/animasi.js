@@ -1,5 +1,6 @@
 new TypeIt("#typeit", {
     speed: 100,
+    loop: true,
     waitUntilVisible: true,
   })
   .type("Fllstack")
@@ -15,4 +16,5 @@ new TypeIt("#typeit", {
   .move(null, {to: "END"})
   .pause(500)
   .type("oper")
+  .pause(2000)
   .go();
