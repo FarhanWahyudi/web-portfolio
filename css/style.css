@@ -20,3 +20,35 @@
 .dark .ti-cursor {
     color: white !important;
 }
+
+.dark .shadow-in-text {
+    background-image: linear-gradient(to top, transparent, white);
+}
+
+.shadow-in-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1.33;
+    background-image: linear-gradient(to top, transparent, black);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 900;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.dark .shadow-in-header {
+    background-image: linear-gradient(to top, transparent, white);
+}
+
+.shadow-in-header {
+    background-image: linear-gradient(to top, transparent, black);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 900;
+    opacity: 0.3;
+    z-index: -1;
+}
