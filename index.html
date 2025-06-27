@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="htmlRoot" class="scrollbar-hide scroll-smooth">
+<html lang="en" id="htmlRoot" class="scrollbar-hide scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,7 @@
         }
     </script>
 </head>
-<body class="font-poppins bg-white dark:bg-[#0E1B31] transition-all duration-500 ease-in-out">
+<body class="font-poppins bg-white dark:bg-[#0E1B31] transition-all duration-500 ease-in-out overflow-x-hidden">
     <!-- NAVBAR -->
     <nav data-aos="fade-down" data-aos-duration="2000" class="fixed mt-3 flex justify-center w-full z-10">
         <div id="navbar" class="flex justify-between items-center w-[96%] rounded-2xl py-2 px-4 shadow-stone-200 backdrop-blur-[2px] bg-blue/80 dark:shadow-slate-900 dark:bg-[#132347]/80 sm:px-7 lg:px-20 xl:w-[98%] xl:px-36 transition-all duration-500">
@@ -63,23 +63,23 @@
     </nav>
 
     <!-- HERO -->
-    <section id="home" class="w-full px-9 pt-20 pb-10 lg:px-20 lg:h-screen lg:pt-40 xl:px-40 2xl:px-80">
+    <section id="home" class="w-full px-9 pt-20 pb-10 lg:px-20 lg:h-screen lg:flex lg:flex-col lg:justify-around lg:pt-40 xl:px-40 2xl:px-80">
         <div class="lg:grid lg:grid-cols-2">
             <div class="flex flex-col items-center justify-center lg:items-start">
-                <h6 data-aos="fade-up" data-aos-duration="2000" class="font-semibold text-gray dark:text-[#C5CADF]">Hi There👋</h6>
-                <h1 data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100" class="font-bold text-5xl text-blue mt-3 text-center lg:text-6xl lg:text-start">Farhan Wahyudi</h1>
-                <h3 data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200" id="typeit" class="text-2xl font-semibold my-4 text-center text-black dark:text-white"></h3>
-                <p data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300" class="text-gray font-medium text-center dark:text-[#C5CADF] sm:w-84 lg:text-start">I am creating stunning software for your business, Intermediate experienced in web design and development.</p>
-                <button data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400" class="flex gap-3 items-center bg-blue text-white px-7 py-3 rounded-lg font-semibold mt-5">
+                <h6 data-aos="fade-up" data-aos-duration="2000" class="font-semibold text-gray dark:text-[#C5CADF] 2xl:text-xl">Hi There👋</h6>
+                <h1 data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100" class="font-bold text-5xl text-blue mt-3 text-center lg:text-6xl lg:text-start 2xl:text-7xl">Farhan Wahyudi</h1>
+                <h3 data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200" id="typeit" class="text-2xl font-semibold my-4 xl:my-6 2xl:my-8 text-center text-black dark:text-white 2xl:text-4xl"></h3>
+                <p data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300" class="text-gray font-medium text-center dark:text-[#C5CADF] sm:w-84 lg:text-start 2xl:text-lg">I am creating stunning software for your business, Intermediate experienced in web design and development.</p>
+                <button data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400" class="flex gap-3 items-center bg-blue text-white px-7 py-3 rounded-lg font-semibold mt-5 xl:px-12 xl:py-5">
                     Download CV
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>
                 </button>
             </div>
-            <div data-aos="fade-left" data-aos-duration="2000" class="relative flex justify-center h-auto">
-                <svg class="absolute -z-10 -bottom-20 text-blue w-[35em] lg:w-[40em] 2xl:w-[50em]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <div data-aos="fade-left" data-aos-duration="2000" class="relative flex justify-center h-auto mt-20 lg:mt-0">
+                <svg class="absolute -z-10 -bottom-16 text-blue w-[32em] xl:-bottom-20 xl:w-[40em] 2xl:w-[45em]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                     <path fill="currentColor" d="M48.6,-51.1C62.8,-46,74,-30.5,72.2,-16.4C70.4,-2.2,55.6,10.7,44,20.5C32.5,30.3,24.2,37,12.3,47C0.4,57.1,-15,70.5,-26.1,68C-37.1,65.6,-43.7,47.3,-46.8,31.9C-49.8,16.5,-49.3,3.9,-48.4,-9.8C-47.5,-23.5,-46.1,-38.4,-38,-44.5C-29.8,-50.7,-14.9,-48,1.2,-49.4C17.2,-50.8,34.4,-56.2,48.6,-51.1Z" transform="translate(100 100)" />
                 </svg>
-                <img src="assets/me/ilustrasi.PNG" alt="" class="w-[400px] 2xl:w-[470px] rounded-full">
+                <img src="assets/me/ilustrasi2.PNG" alt="ilustrasi" class="w-[350px] xl:w-[400px] 2xl:w-[470px] rounded-full">
             </div>
         </div>
         <div class="flex justify-center">
@@ -96,7 +96,7 @@
         <div class="lg:grid lg:grid-cols-2 items-center">
             <div>
                 <div data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" class="flex justify-center items-center w-[280px] h-[360px] mx-auto mb-10 bg-blue rounded-xl md:w-[320px] md:h-[440px] lg:w-[347px] lg:h-[560px] xl:w-[408px] xl:h-[561px]">
-                    <img src="assets/me/WhatsAppimg.jpg" alt="" class="w-[280px] h-[360px] object-cover object-center rounded-xl lg:rotate-10 md:w-[320px] md:h-[440px] lg:w-[347px] lg:h-[560px] xl:w-[408px] xl:h-[661px] hover:rotate-0 transition-rotate duration-300">
+                    <img src="assets/me/farhan.jpg" alt="" class="w-[280px] h-[360px] object-cover object-center rounded-xl lg:rotate-10 md:w-[320px] md:h-[440px] lg:w-[347px] lg:h-[560px] xl:w-[408px] xl:h-[661px] hover:rotate-0 transition-rotate duration-300">
                 </div>
             </div>
             <div class="text-center lg:text-start">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="flex justify-center lg:justify-start">
                     <div data-aos="fade-left" data-aos-duration="1000">
-                        <a href="#contact" class="inline-block flex gap-2 w-62 border-2 border-blue text-blue mt-10 rounded-xl px-10 py-4 font-semibold hover:bg-blue hover:text-white transition duration-300">
+                        <a href="#contact" class="inline-block flex gap-2 border-2 border-blue text-blue mt-10 px-10 py-4 rounded-xl font-semibold hover:bg-blue hover:text-white transition duration-300">
                             Contact With Me
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" font-size="1.25rem" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"></path></svg>
                         </a>
