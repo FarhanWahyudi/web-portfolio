@@ -1098,30 +1098,31 @@
             <span class="text-slate-500 text-lg">Or</span>
             <div class="flex-grow border-t border-slate-500"></div>
         </div>
-        <form action="" class="flex flex-col gap-5 md:gap-8">
+        <form action="https://formsubmit.co/farhanwahyudi875@gmail.com" method="POST" class="flex flex-col gap-5 md:gap-8">
+            <input type="hidden" name="_captcha" value="false">
             <div data-aos="fade-up" data-aos-duration="1000" class="flex flex-col gap-x-5 gap-y-5 md:gap-y-8 lg:flex-row">
                 <div class="flex flex-col gap-3 w-full">
                     <label for="firstName" class="leading-none text-black dark:text-white">Your First Name<span class="text-red-500">*</span></label>
-                    <input type="text" name="firstName" id="firstName" placeholder="Your First Name. Example: John" class="p-3 bg-transparent rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5">
+                    <input type="text" name="firstName" id="firstName" placeholder="Your First Name. Example: John" class="p-3 bg-transparent rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue active:bg-amber-300 text-black dark:text-white md:p-5" required>
                 </div>
                 <div class="flex flex-col gap-3 w-full">
-                    <label for="lastName" class="leading-none text-black dark:text-white">Your Last Name<span class="text-red-500">*</span></label>
+                    <label for="lastName" class="leading-none text-black dark:text-white">Your Last Name</label>
                     <input type="text" name="lastName" id="lastName" placeholder="Your Last Name. Example: Doe" class="p-3 bg-transparent rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5">
                 </div>
             </div>
             <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="flex flex-col gap-x-5 gap-y-5 md:gap-y-8 lg:flex-row">
                 <div class="flex flex-col gap-3 w-full">
                     <label for="email" class="leading-none text-black dark:text-white">Your Email<span class="text-red-500">*</span></label>
-                    <input type="text" name="email" id="email" placeholder="Your Email. Example: johndoe@gmail.com" class="p-3 bg-transparent rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5">
+                    <input type="email" name="email" id="email" placeholder="Your Email. Example: johndoe@gmail.com" class="p-3 bg-transparent rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5" required>
                 </div>
                 <div class="flex flex-col gap-3 w-full">
                     <label for="subject" class="leading-none text-black dark:text-white">Your Subject<span class="text-red-500">*</span></label>
-                    <input type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-3 bg-transparent rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5">
+                    <input type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-3 bg-transparent rounded-md border-2 border-blue outline-none focus:shadow-sm focus:shadow-blue text-black dark:text-white md:p-5" required>
                 </div>
             </div>
             <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="flex flex-col">
                 <label for="message" class="mb-2 text-black dark:text-white">Your Message<span class="text-red-500">*</span></label>
-                <textarea type="text" name="subject" id="subject" placeholder="Your Subject. Example: Hey, I Wanna Collaborate" class="p-5 bg-transparent rounded-md border-2 border-blue outline-none text-black dark:text-white focus:shadow-sm focus:shadow-blue resize-none h-72"></textarea>
+                <textarea name="message" id="message" placeholder="Your Message. Example: Hey, I Wanna Collaborate" class="p-5 bg-transparent rounded-md border-2 border-blue outline-none text-black dark:text-white focus:shadow-sm focus:shadow-blue resize-none h-72" required></textarea>
             </div>
             <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                 <button type="submit" class="flex items-center justify-center w-full gap-1 px-10 py-3 font-semibold text-md bg-blue text-white rounded-md hover:bg-[#2A4365] transition-all duration-300 sm:w-auto">
